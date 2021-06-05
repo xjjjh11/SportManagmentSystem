@@ -1,0 +1,31 @@
+#项目启动端口号
+server:
+  port: 8888
+
+#
+spring:
+  # mysql数据库连接
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sport_mgmt_sys_db?serverTimezone=GMT%2B8
+    username: root
+    password: asd123
+    # alibaba druid连接池配置
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 设置最大最小连接数
+    dbcp2:
+      initial-size: 1
+      max-idle: 20
+      min-idle: 1
+    # 设置数据库获取连接等待超时的时间(6分钟)
+      max-wait-millis: 60000
+  # Jackson 格式设置
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+# mybatis开启匹配驼峰格式的命名（数据库中"s_a" == sA）
+mybatis:
+  configuration:
+    mapUnderscoreToCamelCase: true
+

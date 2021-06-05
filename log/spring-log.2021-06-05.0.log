@@ -1,0 +1,35 @@
+09:35:05.659 [main] INFO  com.sms.SportMgmtSysApplicationTests - Starting SportMgmtSysApplicationTests on Jared with PID 10200 (started by Administrator in D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys)
+09:35:05.662 [main] INFO  com.sms.SportMgmtSysApplicationTests - No active profile set, falling back to default profiles: default
+09:35:07.824 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+09:35:07.833 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+09:35:07.865 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19ms. Found 0 Elasticsearch repository interfaces.
+09:35:07.886 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+09:35:07.888 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+09:35:07.893 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4ms. Found 0 Reactive Elasticsearch repository interfaces.
+09:35:07.936 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+09:35:07.940 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+09:35:07.962 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3ms. Found 0 Redis repository interfaces.
+09:35:08.490 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.sms]' package. Please check your configuration.
+09:35:11.281 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+09:35:22.910 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+09:35:22.911 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+09:35:22.912 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+09:35:22.912 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+09:35:22.972 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+09:35:22.973 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+09:35:22.973 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+09:35:22.974 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+09:35:24.184 [main] INFO  o.s.d.e.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.9.RELEASE
+09:35:24.186 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+09:35:24.186 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+09:35:24.691 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 68b977a9-6faf-4329-ab57-e9bb5a06f76b
+
+09:35:25.116 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b529d7e, org.springframework.security.web.context.SecurityContextPersistenceFilter@35af1558, org.springframework.security.web.header.HeaderWriterFilter@432eb882, org.springframework.security.web.csrf.CsrfFilter@5b55c3d6, org.springframework.security.web.authentication.logout.LogoutFilter@52a75c12, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1c2b65cc, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@12bcf7c6, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3664c596, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4895e8f6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ab90d01, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a0c512b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40aad17d, org.springframework.security.web.session.SessionManagementFilter@146add7b, org.springframework.security.web.access.ExceptionTranslationFilter@3d9c8c3c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3164d5aa]
+09:35:25.303 [main] INFO  com.sms.SportMgmtSysApplicationTests - Started SportMgmtSysApplicationTests in 20.627 seconds (JVM running for 23.687)
+09:35:26.649 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+09:35:27.303 [main] INFO  com.sms.SportMgmtSysApplicationTests - 获取数据连接：com.mysql.cj.jdbc.ConnectionImpl@7615666e
+09:35:27.372 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+09:35:27.378 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+09:35:27.379 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
