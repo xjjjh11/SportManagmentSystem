@@ -33,3 +33,429 @@ Using generated security password: 68b977a9-6faf-4329-ab57-e9bb5a06f76b
 09:35:27.372 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 09:35:27.378 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
 09:35:27.379 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:43:36.105 [main] INFO  com.sms.SportMgmtSysApplicationTests - Starting SportMgmtSysApplicationTests on Jared with PID 18628 (started by Administrator in D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys)
+16:43:36.108 [main] INFO  com.sms.SportMgmtSysApplicationTests - No active profile set, falling back to default profiles: default
+16:44:12.621 [main] INFO  com.sms.SportMgmtSysApplication - Starting SportMgmtSysApplication on Jared with PID 4676 (D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys\target\classes started by Administrator in D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys)
+16:44:12.625 [main] INFO  com.sms.SportMgmtSysApplication - No active profile set, falling back to default profiles: default
+16:44:14.814 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:44:14.818 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+16:44:14.856 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29ms. Found 0 Elasticsearch repository interfaces.
+16:44:14.865 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:44:14.866 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+16:44:14.878 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11ms. Found 0 Reactive Elasticsearch repository interfaces.
+16:44:14.905 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:44:14.908 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:44:14.931 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9ms. Found 0 Redis repository interfaces.
+16:44:15.601 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2921199d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:44:15.613 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:44:16.274 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+16:44:16.293 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+16:44:16.294 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:44:16.296 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+16:44:16.560 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:44:16.560 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3838 ms
+16:44:19.093 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a99c42c, org.springframework.security.web.context.SecurityContextPersistenceFilter@10166230, org.springframework.security.web.header.HeaderWriterFilter@32ba5c65, org.springframework.web.filter.CorsFilter@2fa879ed, org.springframework.security.web.authentication.logout.LogoutFilter@144e36ae, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@246de37e, com.sms.usermgmt.security.filter.JWTAuthenticationTokenFilter@2b2b7e3c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2e40fdbd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@b77b0a0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e2c4d4b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ec082a1, org.springframework.security.web.session.SessionManagementFilter@47797401, org.springframework.security.web.access.ExceptionTranslationFilter@5a90fcaa, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e0294a7]
+16:44:19.198 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:44:20.560 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:44:20.560 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:44:20.560 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:44:20.560 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:44:20.576 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:44:20.576 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:44:20.576 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:44:20.577 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:44:21.680 [main] INFO  o.s.d.e.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.9.RELEASE
+16:44:21.680 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+16:44:21.681 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+16:44:22.021 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+16:44:22.049 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+16:44:22.141 [main] INFO  com.sms.SportMgmtSysApplication - Started SportMgmtSysApplication in 10.909 seconds (JVM running for 22.662)
+16:45:11.782 [http-nio-8888-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:45:11.783 [http-nio-8888-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:45:11.800 [http-nio-8888-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+16:45:12.027 [http-nio-8888-exec-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+16:45:12.647 [http-nio-8888-exec-2] INFO  c.s.u.s.service.MyUserDetailsService - selByUserName:null
+16:45:12.648 [http-nio-8888-exec-2] INFO  c.s.u.s.UserAuthenticationProvider - userInfo:null
+16:45:12.652 [http-nio-8888-exec-2] INFO  c.s.u.s.h.UserLoginFailureHandler - 【登录失败】用户名不存在
+16:47:28.703 [main] INFO  com.sms.SportMgmtSysApplicationTests - Starting SportMgmtSysApplicationTests on Jared with PID 9000 (started by Administrator in D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys)
+16:47:28.706 [main] INFO  com.sms.SportMgmtSysApplicationTests - No active profile set, falling back to default profiles: default
+16:47:32.745 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:47:32.758 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+16:47:32.817 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46ms. Found 0 Elasticsearch repository interfaces.
+16:47:32.828 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:47:32.830 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+16:47:32.844 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 Reactive Elasticsearch repository interfaces.
+16:47:32.881 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:47:32.883 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:47:32.911 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+16:47:34.702 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@28b8f98a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:47:34.755 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:47:51.060 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@103e7c7c, org.springframework.security.web.context.SecurityContextPersistenceFilter@10d905c1, org.springframework.security.web.header.HeaderWriterFilter@5bde6148, org.springframework.web.filter.CorsFilter@5c3710b3, org.springframework.security.web.authentication.logout.LogoutFilter@43ab0659, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4a890fdd, com.sms.usermgmt.security.filter.JWTAuthenticationTokenFilter@8b1202a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@15d58530, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36665c11, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16fc5622, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@34bddf43, org.springframework.security.web.session.SessionManagementFilter@10a0a1e, org.springframework.security.web.access.ExceptionTranslationFilter@3220c28, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2328ec73]
+16:47:51.706 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:47:53.981 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:47:53.981 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:47:53.982 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:47:53.985 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:47:54.045 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:47:54.045 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:47:54.046 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:47:54.046 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:47:55.294 [main] INFO  o.s.d.e.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.9.RELEASE
+16:47:55.295 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+16:47:55.295 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+16:47:56.154 [main] INFO  com.sms.SportMgmtSysApplicationTests - Started SportMgmtSysApplicationTests in 28.9 seconds (JVM running for 33.502)
+16:47:57.699 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:47:57.712 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+16:49:31.347 [main] INFO  com.sms.SportMgmtSysApplication - Starting SportMgmtSysApplication on Jared with PID 16564 (D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys\target\classes started by Administrator in D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys)
+16:49:31.387 [main] INFO  com.sms.SportMgmtSysApplication - No active profile set, falling back to default profiles: default
+16:49:33.691 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:49:33.694 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+16:49:33.731 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30ms. Found 0 Elasticsearch repository interfaces.
+16:49:33.742 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:49:33.744 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+16:49:33.761 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15ms. Found 0 Reactive Elasticsearch repository interfaces.
+16:49:33.792 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:49:33.794 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:49:33.824 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+16:49:34.525 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@43f03c23' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:49:34.534 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:49:35.121 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+16:49:35.140 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+16:49:35.142 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:49:35.143 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+16:49:35.421 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:49:35.422 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3919 ms
+16:49:37.439 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@628b503a, org.springframework.security.web.context.SecurityContextPersistenceFilter@3cbfdf5c, org.springframework.security.web.header.HeaderWriterFilter@13dd7887, org.springframework.web.filter.CorsFilter@2558f65c, org.springframework.security.web.authentication.logout.LogoutFilter@f810c18, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@83ebdc5, com.sms.usermgmt.security.filter.JWTAuthenticationTokenFilter@11c3ce6a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@71b3ba5a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11180750, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ad1b737, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a3b1f7e, org.springframework.security.web.session.SessionManagementFilter@3e2c4d4b, org.springframework.security.web.access.ExceptionTranslationFilter@7283877, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2f9addd4]
+16:49:37.541 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:49:38.924 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:49:38.925 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:49:38.927 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:49:38.929 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:49:38.974 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:49:38.975 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:49:38.976 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:49:38.977 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:49:40.104 [main] INFO  o.s.d.e.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.9.RELEASE
+16:49:40.104 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+16:49:40.104 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+16:49:40.390 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+16:49:40.422 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+16:49:40.500 [main] INFO  com.sms.SportMgmtSysApplication - Started SportMgmtSysApplication in 10.593 seconds (JVM running for 22.029)
+16:49:53.665 [http-nio-8888-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:49:53.666 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:49:53.682 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+16:49:54.022 [http-nio-8888-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+16:49:54.854 [http-nio-8888-exec-1] INFO  c.s.u.s.service.MyUserDetailsService - selByUserName:null
+16:49:54.856 [http-nio-8888-exec-1] INFO  c.s.u.s.UserAuthenticationProvider - userInfo:null
+16:49:54.860 [http-nio-8888-exec-1] INFO  c.s.u.s.h.UserLoginFailureHandler - 【登录失败】用户名不存在
+16:54:51.367 [main] INFO  com.sms.SportMgmtSysApplication - Starting SportMgmtSysApplication on Jared with PID 19116 (D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys\target\classes started by Administrator in D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys)
+16:54:51.372 [main] INFO  com.sms.SportMgmtSysApplication - No active profile set, falling back to default profiles: default
+16:54:53.934 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:54:53.937 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+16:54:53.975 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30ms. Found 0 Elasticsearch repository interfaces.
+16:54:53.985 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:54:53.988 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+16:54:54.000 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10ms. Found 0 Reactive Elasticsearch repository interfaces.
+16:54:54.033 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:54:54.035 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:54:54.063 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11ms. Found 0 Redis repository interfaces.
+16:54:54.949 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6588b715' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:54:54.963 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:54:55.589 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+16:54:55.611 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+16:54:55.612 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:54:55.613 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+16:54:55.907 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:54:55.908 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4438 ms
+16:54:58.261 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3de88f64, org.springframework.security.web.context.SecurityContextPersistenceFilter@6efd0a6e, org.springframework.security.web.header.HeaderWriterFilter@280d5a82, org.springframework.web.filter.CorsFilter@4e8afdad, org.springframework.security.web.authentication.logout.LogoutFilter@7b3feb26, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3d132bb6, com.sms.usermgmt.security.filter.JWTAuthenticationTokenFilter@79b8ecb, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@631944d4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@30228de7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7db162f2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3722f39d, org.springframework.security.web.session.SessionManagementFilter@333a44f2, org.springframework.security.web.access.ExceptionTranslationFilter@6cc8adff, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@16e907b6]
+16:54:58.372 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:54:59.731 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:54:59.735 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:54:59.735 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:54:59.736 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:54:59.768 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:54:59.771 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:54:59.772 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:54:59.773 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:55:00.903 [main] INFO  o.s.d.e.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.9.RELEASE
+16:55:00.905 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+16:55:00.905 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+16:55:01.331 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+16:55:01.374 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+16:55:01.477 [main] INFO  com.sms.SportMgmtSysApplication - Started SportMgmtSysApplication in 11.744 seconds (JVM running for 26.579)
+16:55:14.716 [http-nio-8888-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:55:14.717 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:55:14.736 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 18 ms
+16:55:14.799 [http-nio-8888-exec-1] INFO  c.s.u.s.UserAuthenticationProvider - userNumber:
+16:55:14.931 [http-nio-8888-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+16:55:15.600 [http-nio-8888-exec-1] INFO  c.s.u.s.service.MyUserDetailsService - selByUserNumber:null
+16:55:15.601 [http-nio-8888-exec-1] INFO  c.s.u.s.UserAuthenticationProvider - userInfo:null
+16:55:15.603 [http-nio-8888-exec-1] INFO  c.s.u.s.h.UserLoginFailureHandler - 【登录失败】用户名不存在
+16:57:12.736 [main] INFO  com.sms.SportMgmtSysApplication - Starting SportMgmtSysApplication on Jared with PID 18492 (D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys\target\classes started by Administrator in D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys)
+16:57:12.740 [main] INFO  com.sms.SportMgmtSysApplication - No active profile set, falling back to default profiles: default
+16:57:15.092 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:57:15.099 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+16:57:15.144 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34ms. Found 0 Elasticsearch repository interfaces.
+16:57:15.152 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:57:15.153 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+16:57:15.168 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 Reactive Elasticsearch repository interfaces.
+16:57:15.199 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:57:15.202 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:57:15.237 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+16:57:16.017 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@43f03c23' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:57:16.030 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:57:16.697 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+16:57:16.719 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+16:57:16.723 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:57:16.724 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+16:57:17.038 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:57:17.039 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4166 ms
+16:57:19.344 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@628b503a, org.springframework.security.web.context.SecurityContextPersistenceFilter@3cbfdf5c, org.springframework.security.web.header.HeaderWriterFilter@13dd7887, org.springframework.web.filter.CorsFilter@2558f65c, org.springframework.security.web.authentication.logout.LogoutFilter@f810c18, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@83ebdc5, com.sms.usermgmt.security.filter.JWTAuthenticationTokenFilter@11c3ce6a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@71b3ba5a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11180750, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ad1b737, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a3b1f7e, org.springframework.security.web.session.SessionManagementFilter@3e2c4d4b, org.springframework.security.web.access.ExceptionTranslationFilter@7283877, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2f9addd4]
+16:57:19.456 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:57:21.197 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:57:21.198 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:57:21.200 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:57:21.200 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:57:21.226 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:57:21.226 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:57:21.226 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:57:21.227 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+16:57:22.387 [main] INFO  o.s.d.e.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.9.RELEASE
+16:57:22.388 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+16:57:22.388 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+16:57:22.806 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+16:57:22.838 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+16:57:22.930 [main] INFO  com.sms.SportMgmtSysApplication - Started SportMgmtSysApplication in 11.682 seconds (JVM running for 23.266)
+16:57:28.012 [http-nio-8888-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:57:28.013 [http-nio-8888-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:57:28.039 [http-nio-8888-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 25 ms
+16:57:28.107 [http-nio-8888-exec-2] INFO  c.s.u.s.UserAuthenticationProvider - userNumber:201811701127
+16:57:28.305 [http-nio-8888-exec-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+16:57:29.261 [http-nio-8888-exec-2] INFO  c.s.u.s.service.MyUserDetailsService - selByUserNumber:User(userNumber=201811701127, username=肖家豪, password=$2a$2a$10$ijH6Sv2riqmfFPBMNK0SHOhAGPTrAl7d7IknkpZDZ5kND5Wrhebz, gender=1, phone=15360840362, academy=null, major=null, classes=null, enabled=0, createTime=null, authorities=null)
+16:57:29.262 [http-nio-8888-exec-2] INFO  c.s.u.s.UserAuthenticationProvider - userInfo:User(userNumber=201811701127, username=肖家豪, password=$2a$2a$10$ijH6Sv2riqmfFPBMNK0SHOhAGPTrAl7d7IknkpZDZ5kND5Wrhebz, gender=1, phone=15360840362, academy=null, major=null, classes=null, enabled=0, createTime=null, authorities=null)
+16:57:29.263 [http-nio-8888-exec-2] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+16:57:29.276 [http-nio-8888-exec-2] INFO  c.s.u.s.h.UserLoginFailureHandler - 【登录失败】密码不正确
+16:59:57.633 [main] INFO  com.sms.SportMgmtSysApplicationTests - Starting SportMgmtSysApplicationTests on Jared with PID 19384 (started by Administrator in D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys)
+16:59:57.643 [main] INFO  com.sms.SportMgmtSysApplicationTests - No active profile set, falling back to default profiles: default
+17:00:02.702 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+17:00:02.708 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+17:00:02.828 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 105ms. Found 0 Elasticsearch repository interfaces.
+17:00:02.843 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+17:00:02.846 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+17:00:02.872 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24ms. Found 0 Reactive Elasticsearch repository interfaces.
+17:00:02.928 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+17:00:02.947 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+17:00:03.053 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74ms. Found 0 Redis repository interfaces.
+17:00:05.110 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@28b8f98a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:00:05.170 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:00:26.618 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b6136eb, org.springframework.security.web.context.SecurityContextPersistenceFilter@10d905c1, org.springframework.security.web.header.HeaderWriterFilter@5bde6148, org.springframework.web.filter.CorsFilter@2cce10bc, org.springframework.security.web.authentication.logout.LogoutFilter@43ab0659, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4a890fdd, com.sms.usermgmt.security.filter.JWTAuthenticationTokenFilter@73234691, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@15d58530, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36665c11, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16fc5622, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25df2014, org.springframework.security.web.session.SessionManagementFilter@10a0a1e, org.springframework.security.web.access.ExceptionTranslationFilter@3220c28, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2328ec73]
+17:00:27.430 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+17:00:30.655 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:00:30.656 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:00:30.656 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:00:30.660 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:00:30.783 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:00:30.784 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:00:30.785 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:00:30.786 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:00:32.256 [main] INFO  o.s.d.e.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.9.RELEASE
+17:00:32.257 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+17:00:32.257 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+17:00:33.638 [main] INFO  com.sms.SportMgmtSysApplicationTests - Started SportMgmtSysApplicationTests in 37.136 seconds (JVM running for 41.062)
+17:00:36.136 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+17:00:36.151 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+17:01:47.207 [http-nio-8888-exec-5] INFO  c.s.u.s.UserAuthenticationProvider - userNumber:201811701127
+17:01:47.226 [http-nio-8888-exec-5] INFO  c.s.u.s.service.MyUserDetailsService - selByUserNumber:User(userNumber=201811701127, username=肖家豪, password=$2a$10$SNEixk9B9HOqAkrlJbGOCOv6Imd5O/UrOkdsOvpBt80fpUozzF25u, gender=1, phone=15360840362, academy=null, major=null, classes=null, enabled=0, createTime=null, authorities=null)
+17:01:47.227 [http-nio-8888-exec-5] INFO  c.s.u.s.UserAuthenticationProvider - userInfo:User(userNumber=201811701127, username=肖家豪, password=$2a$10$SNEixk9B9HOqAkrlJbGOCOv6Imd5O/UrOkdsOvpBt80fpUozzF25u, gender=1, phone=15360840362, academy=null, major=null, classes=null, enabled=0, createTime=null, authorities=null)
+17:01:47.730 [http-nio-8888-exec-5] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'sport_mgmt_sys_db.sys_user_role' doesn't exist
+### The error may exist in com/sms/usermgmt/mapper/MyUserDetailsMapper.java (best guess)
+### The error may involve com.sms.usermgmt.mapper.MyUserDetailsMapper.findRoleByUserName-Inline
+### The error occurred while setting parameters
+### SQL: SELECT role_code FROM tb_sms_role r LEFT JOIN sys_user_role ur ON r.id = ur.role_id LEFT JOIN sys_user u ON u.user_number = ur.user_number WHERE u.user_number = ?
+### Cause: java.sql.SQLSyntaxErrorException: Table 'sport_mgmt_sys_db.sys_user_role' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'sport_mgmt_sys_db.sys_user_role' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:91)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy67.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy70.findRoleByUserName(Unknown Source)
+	at com.sms.usermgmt.security.UserAuthenticationProvider.authenticate(UserAuthenticationProvider.java:77)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:199)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:219)
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:95)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'sport_mgmt_sys_db.sys_user_role' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 61 common frames omitted
+17:04:20.696 [main] INFO  com.sms.SportMgmtSysApplication - Starting SportMgmtSysApplication on Jared with PID 13888 (D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys\target\classes started by Administrator in D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys)
+17:04:20.700 [main] INFO  com.sms.SportMgmtSysApplication - No active profile set, falling back to default profiles: default
+17:04:23.671 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+17:04:23.675 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+17:04:23.718 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34ms. Found 0 Elasticsearch repository interfaces.
+17:04:23.728 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+17:04:23.730 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+17:04:23.745 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 Reactive Elasticsearch repository interfaces.
+17:04:23.777 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+17:04:23.779 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+17:04:23.811 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11ms. Found 0 Redis repository interfaces.
+17:04:25.158 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@fd413fb' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:04:25.184 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:04:26.098 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+17:04:26.136 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+17:04:26.137 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:04:26.138 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+17:04:26.494 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:04:26.495 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5507 ms
+17:04:29.204 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@dbc7e0a, org.springframework.security.web.context.SecurityContextPersistenceFilter@67ceeffd, org.springframework.security.web.header.HeaderWriterFilter@1ad1b737, org.springframework.web.filter.CorsFilter@636fccb0, org.springframework.security.web.authentication.logout.LogoutFilter@6b091a92, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1a4930cf, com.sms.usermgmt.security.filter.JWTAuthenticationTokenFilter@28519bfb, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3ea84e01, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72001c71, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a34a51e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15914bb5, org.springframework.security.web.session.SessionManagementFilter@77d0dbba, org.springframework.security.web.access.ExceptionTranslationFilter@58636b50, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@e49437]
+17:04:29.331 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+17:04:30.998 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:04:30.999 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:04:30.999 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:04:31.000 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:04:31.025 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:04:31.026 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:04:31.026 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:04:31.027 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:04:32.137 [main] INFO  o.s.d.e.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.9.RELEASE
+17:04:32.138 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+17:04:32.139 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+17:04:32.526 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+17:04:32.556 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+17:04:32.653 [main] INFO  com.sms.SportMgmtSysApplication - Started SportMgmtSysApplication in 13.765 seconds (JVM running for 25.223)
+17:05:09.294 [http-nio-8888-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:05:09.297 [http-nio-8888-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:05:09.313 [http-nio-8888-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+17:05:09.380 [http-nio-8888-exec-2] INFO  c.s.u.s.UserAuthenticationProvider - userNumber:201811701127
+17:05:09.525 [http-nio-8888-exec-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:05:10.256 [http-nio-8888-exec-2] INFO  c.s.u.s.service.MyUserDetailsService - selByUserNumber:User(userNumber=201811701127, username=肖家豪, password=$2a$10$SNEixk9B9HOqAkrlJbGOCOv6Imd5O/UrOkdsOvpBt80fpUozzF25u, gender=1, phone=15360840362, academy=null, major=null, classes=null, enabled=0, createTime=null, authorities=null)
+17:05:10.257 [http-nio-8888-exec-2] INFO  c.s.u.s.UserAuthenticationProvider - userInfo:User(userNumber=201811701127, username=肖家豪, password=$2a$10$SNEixk9B9HOqAkrlJbGOCOv6Imd5O/UrOkdsOvpBt80fpUozzF25u, gender=1, phone=15360840362, academy=null, major=null, classes=null, enabled=0, createTime=null, authorities=null)
+17:05:10.467 [http-nio-8888-exec-2] INFO  c.s.u.s.UserAuthenticationProvider - authenticationToken:org.springframework.security.authentication.UsernamePasswordAuthenticationToken@aaefc8ee: Principal: User(userNumber=201811701127, username=肖家豪, password=$2a$10$SNEixk9B9HOqAkrlJbGOCOv6Imd5O/UrOkdsOvpBt80fpUozzF25u, gender=1, phone=15360840362, academy=null, major=null, classes=null, enabled=0, createTime=null, authorities=[ROLE_admin]); Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_admin
+17:05:10.472 [http-nio-8888-exec-2] INFO  c.s.u.s.h.UserLoginSuccessHandler - user:User(userNumber=201811701127, username=肖家豪, password=$2a$10$SNEixk9B9HOqAkrlJbGOCOv6Imd5O/UrOkdsOvpBt80fpUozzF25u, gender=1, phone=15360840362, academy=null, major=null, classes=null, enabled=0, createTime=null, authorities=[ROLE_admin])
+17:05:46.851 [http-nio-8888-exec-3] INFO  c.s.u.s.f.JWTAuthenticationTokenFilter - tokenHeader:Jared-eyJhbGciOiJIUzUxMiJ9.eyJhdXRob3JpdGllcyI6IlJPTEVfYWRtaW4sIiwianRpIjoiMjAxODExNzAxMTI3Iiwic3ViIjoi6IKW5a626LGqIiwiaWF0IjoxNjIyODgzOTEwLCJpc3MiOiJKYXJlZCIsImV4cCI6MTYyMzQ4ODcxMH0.tIwIdVDAPoH66hB5kfCmXCyLZ9Zj3v2wYE8Mmj4DLu92qW_526QEnN20rdye5GccGeQXQdtdO3LwNB_4Xfksig
+17:05:46.932 [http-nio-8888-exec-3] INFO  c.s.u.s.f.JWTAuthenticationTokenFilter - claims:{authorities=ROLE_admin,, jti=201811701127, sub=肖家豪, iat=1622883910, iss=Jared, exp=1623488710}
+17:05:46.965 [http-nio-8888-exec-3] INFO  c.s.u.s.f.JWTAuthenticationTokenFilter - authorities:[ROLE_admin]
+17:17:16.367 [main] INFO  com.sms.SportMgmtSysApplication - Starting SportMgmtSysApplication on Jared with PID 17160 (D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys\target\classes started by Administrator in D:\ideaIU-2019.3.3\IdeaProject\sport_mgmt_sys)
+17:17:16.372 [main] INFO  com.sms.SportMgmtSysApplication - No active profile set, falling back to default profiles: default
+17:17:19.973 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+17:17:19.976 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+17:17:20.023 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37ms. Found 0 Elasticsearch repository interfaces.
+17:17:20.032 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+17:17:20.033 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+17:17:20.046 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11ms. Found 0 Reactive Elasticsearch repository interfaces.
+17:17:20.078 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+17:17:20.081 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+17:17:20.113 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 Redis repository interfaces.
+17:17:21.009 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2921199d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:17:21.017 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17:17:21.710 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+17:17:21.737 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+17:17:21.738 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:17:21.739 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+17:17:22.123 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:17:22.124 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5376 ms
+17:17:24.309 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@208e5b23, org.springframework.security.web.context.SecurityContextPersistenceFilter@7283877, org.springframework.security.web.header.HeaderWriterFilter@22ff1372, org.springframework.web.filter.CorsFilter@2bcb1414, org.springframework.security.web.authentication.logout.LogoutFilter@67ceeffd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@376498da, com.sms.usermgmt.security.filter.JWTAuthenticationTokenFilter@aee05f4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2f038d3c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13dd7887, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6dc2279c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b4829aa, org.springframework.security.web.session.SessionManagementFilter@3a70575, org.springframework.security.web.access.ExceptionTranslationFilter@b77b0a0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@194037f9]
+17:17:24.421 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+17:17:25.653 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:17:25.654 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:17:25.654 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:17:25.655 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:17:25.671 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:17:25.672 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:17:25.672 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:17:25.673 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+17:17:26.763 [main] INFO  o.s.d.e.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.9.RELEASE
+17:17:26.764 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+17:17:26.764 [main] INFO  o.s.d.e.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+17:17:27.050 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+17:17:27.075 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+17:17:27.143 [main] INFO  com.sms.SportMgmtSysApplication - Started SportMgmtSysApplication in 12.786 seconds (JVM running for 25.635)
+17:17:45.403 [http-nio-8888-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:17:45.405 [http-nio-8888-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:17:45.420 [http-nio-8888-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+17:17:45.490 [http-nio-8888-exec-2] INFO  c.s.u.s.UserAuthenticationProvider - userNumber:201811701127
+17:17:45.611 [http-nio-8888-exec-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:17:46.144 [http-nio-8888-exec-2] INFO  c.s.u.s.service.MyUserDetailsService - selByUserNumber:User(userNumber=201811701127, username=肖家豪, password=$2a$10$SNEixk9B9HOqAkrlJbGOCOv6Imd5O/UrOkdsOvpBt80fpUozzF25u, gender=1, phone=15360840362, academy=null, major=null, classes=null, enabled=0, createTime=null, authorities=null)
+17:17:46.145 [http-nio-8888-exec-2] INFO  c.s.u.s.UserAuthenticationProvider - userInfo:User(userNumber=201811701127, username=肖家豪, password=$2a$10$SNEixk9B9HOqAkrlJbGOCOv6Imd5O/UrOkdsOvpBt80fpUozzF25u, gender=1, phone=15360840362, academy=null, major=null, classes=null, enabled=0, createTime=null, authorities=null)
+17:17:46.304 [http-nio-8888-exec-2] INFO  c.s.u.s.UserAuthenticationProvider - authenticationToken:org.springframework.security.authentication.UsernamePasswordAuthenticationToken@aaefc8ee: Principal: User(userNumber=201811701127, username=肖家豪, password=$2a$10$SNEixk9B9HOqAkrlJbGOCOv6Imd5O/UrOkdsOvpBt80fpUozzF25u, gender=1, phone=15360840362, academy=null, major=null, classes=null, enabled=0, createTime=null, authorities=[ROLE_admin]); Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_admin
+17:17:46.306 [http-nio-8888-exec-2] INFO  c.s.u.s.h.UserLoginSuccessHandler - user:User(userNumber=201811701127, username=肖家豪, password=$2a$10$SNEixk9B9HOqAkrlJbGOCOv6Imd5O/UrOkdsOvpBt80fpUozzF25u, gender=1, phone=15360840362, academy=null, major=null, classes=null, enabled=0, createTime=null, authorities=[ROLE_admin])
+17:17:59.025 [http-nio-8888-exec-3] INFO  c.s.u.s.f.JWTAuthenticationTokenFilter - tokenHeader:Jared-eyJhbGciOiJIUzUxMiJ9.eyJhdXRob3JpdGllcyI6IlJPTEVfYWRtaW4sIiwianRpIjoiMjAxODExNzAxMTI3Iiwic3ViIjoi6IKW5a626LGqIiwiaWF0IjoxNjIyODg0NjY2LCJpc3MiOiJKYXJlZCIsImV4cCI6MTYyMzQ4OTQ2Nn0.Jazot6HY5KtbypwARnJAJYr8fdcifKGASBz0A3LpqCu2iZoBmOYqkE23EK3p0G6pX3dOtG7emzjejTtE1g_nIw
+17:17:59.087 [http-nio-8888-exec-3] INFO  c.s.u.s.f.JWTAuthenticationTokenFilter - claims:{authorities=ROLE_admin,, jti=201811701127, sub=肖家豪, iat=1622884666, iss=Jared, exp=1623489466}
+17:17:59.092 [http-nio-8888-exec-3] INFO  c.s.u.s.f.JWTAuthenticationTokenFilter - authorities:[ROLE_admin]
+17:18:10.769 [http-nio-8888-exec-4] INFO  c.s.u.s.f.JWTAuthenticationTokenFilter - tokenHeader:Jared-eyJhbGciOiJIUzUxMiJ9.eyJhdXRob3JpdGllcyI6IlJPTEVfYWRtaW4sIiwianRpIjoiMjAxODExNzAxMTI3Iiwic3ViIjoi6IKW5a626LGqIiwiaWF0IjoxNjIyODg0NjY2LCJpc3MiOiJKYXJlZCIsImV4cCI6MTYyMzQ4OTQ2Nn0.Jazot6HY5KtbypwARnJAJYr8fdcifKGASBz0A3LpqCu2iZoBmOYqkE23EK3p0G6pX3dOtG7emzjejTtE1g_nIw
+17:18:10.773 [http-nio-8888-exec-4] INFO  c.s.u.s.f.JWTAuthenticationTokenFilter - claims:{authorities=ROLE_admin,, jti=201811701127, sub=肖家豪, iat=1622884666, iss=Jared, exp=1623489466}
+17:18:10.774 [http-nio-8888-exec-4] INFO  c.s.u.s.f.JWTAuthenticationTokenFilter - authorities:[ROLE_admin]
