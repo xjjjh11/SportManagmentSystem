@@ -2,7 +2,6 @@
 server:
   port: 8888
 
-#
 spring:
   # mysql数据库连接
   datasource:

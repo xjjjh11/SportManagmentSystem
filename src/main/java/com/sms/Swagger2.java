@@ -25,11 +25,8 @@ import java.util.function.Predicate;
 @Configuration
 @EnableSwagger2
 public class Swagger2 {
-
-    final static String basePackage1 = "com.sms.usermgmt.controller";
+    // 扫描全部包
     final static String basePackage2 = "com.sms";
-    final static String basePackage3 = "com.sms.equipmgmt.controller";
-
 
     @Bean
     public Docket createRestApi(){

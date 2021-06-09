@@ -107,9 +107,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 )
                 .permitAll()
                 .antMatchers(HttpMethod.POST,"/login","/user/register").permitAll()
-//                .antMatchers("/user/**").hasRole("user")
-                .antMatchers("/admin/**").hasRole("admin")
-                .antMatchers("/superAdmin/**").hasRole("superAdmin")
+                .antMatchers("*/user/**").hasRole("user")
+                .antMatchers("*/admin/**").hasRole("admin")
+                .antMatchers("*/superAdmin/**").hasRole("superAdmin")
                 .anyRequest().authenticated()
                 .and()
 //------------------------------------------------------------------------

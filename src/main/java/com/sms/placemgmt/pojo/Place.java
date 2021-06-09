@@ -34,7 +34,7 @@ public class Place {
      * （默认为0，空闲状态）
      */
     @ApiModelProperty("场地状态")
-    private Integer state;
+    private Integer status;
     /**
      * 时间段id
      *      即可用时间段
