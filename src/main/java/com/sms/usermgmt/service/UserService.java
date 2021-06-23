@@ -38,6 +38,13 @@ public interface UserService {
      * @param phone 手机号
      * @return
      */
-    Integer updUserInfoByUserNumber(String userNumber,Integer gender,String academy,
+    Integer updUserInfoByUserNumber(String userNumber,String username,Integer gender,String academy,
                                     String major,String classes,String phone);
+
+    /**
+     * 查询用户密码
+     * @param userNumber
+     * @return
+     */
+    String findPwdByUserNumber(String userNumber);
 }

@@ -11,10 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author Jared
@@ -30,6 +27,9 @@ public class PlaceServiceImpl implements PlaceService {
     private TimeSlotMapper timeSlotMapper;
     @Autowired
     private AppointmentMapper appointmentMapper;
+    /**
+     * 场地免费使用时间
+     */
     private final String freeTimeZone = "16:00~18:00";
 
     /**
@@ -48,7 +48,13 @@ public class PlaceServiceImpl implements PlaceService {
      */
     @Override
     public List<Integer> findPlaceTypes() {
-        return placeMapper.selAllPlaceTypes();
+        List<Integer> list = new ArrayList<>();
+        List<Integer> types = placeMapper.selAllPlaceTypes();
+        for (int i = 0; i < types.size() / 3; i++) {
+            list.add(types.get(3*i));
+        }
+        log.info("所有场地类型："+list);
+        return list;
     }
 
     /**
@@ -132,22 +138,22 @@ public class PlaceServiceImpl implements PlaceService {
      * 查询一周内场地全部时间
      * @param placeName
      * @param placeType
+     * @param week
      * @return
      */
     @Override
-    public Map<String,Object> findAllTime(String placeName, Integer placeType) {
+    public Map<String,Object> findAllTime(String placeName, Integer placeType,Integer week) {
         Map<String, Object> map = new HashMap<>();
-        List<TimeSlot> timeSlots = timeSlotMapper.selAllTime();
-        List<Appointment> appointments = appointmentMapper.selAppointTimeByPlaceNameAndType(placeName, placeType);
+        List<TimeSlot> timeSlots = timeSlotMapper.selTimeByWeek(week);
+        List<Appointment> appointments = appointmentMapper.selAppointWeekByPlaceNameAndType(placeName, placeType,week);
         Iterator<TimeSlot> timeSlotIter = timeSlots.iterator();
         // 排除全部空闲时间中，已经被预约的时间
         while (timeSlotIter.hasNext()){
             TimeSlot timeSlot = timeSlotIter.next();
             for (Appointment appointment : appointments){
-                if (timeSlot.getTimeZone().equals(appointment.getTimeZone()) &&
-                timeSlot.getWeek().equals(appointment.getWeek())){
+                // 只显示某一天的场地时间使用情况
+                if (timeSlot.getTimeZone().equals(appointment.getTimeZone()))
                     timeSlotIter.remove();
-                }
             }
         }
         // 空闲时间
@@ -167,7 +173,7 @@ public class PlaceServiceImpl implements PlaceService {
      * @return
      */
     @Override
-    public Integer findRateByPlaceTypeAndTime(Integer placeType, Integer week, String timeZone) {
+    public Double findRateByPlaceTypeAndTime(Integer placeType, Integer week, String timeZone) {
         // 星期一到星期五的16:00~18:00免费使用全部场地
         if (week <= 5 && week >= 1 && timeZone.equals(freeTimeZone))
             return placeMapper.selRatesByPlaceTypeAndTime(placeType, week, timeZone);

@@ -22,4 +22,11 @@ public interface TimeSlotMapper {
      */
     @Select("SELECT id,week,time_zone FROM tb_sms_time_slot")
     List<TimeSlot> selAllTime();
+    /**
+     * 查询某一天的时间段信息
+     * @return
+     */
+    @Select("SELECT id,time_zone FROM tb_sms_time_slot\n" +
+            "WHERE week = #{week}")
+    List<TimeSlot> selTimeByWeek(Integer week);
 }

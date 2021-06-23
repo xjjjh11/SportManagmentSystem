@@ -1,8 +1,7 @@
 package com.sms.usermgmt.security.service;
 
 import com.sms.usermgmt.mapper.MyUserDetailsMapper;
-import com.sms.usermgmt.pojo.User;
-import com.sms.usermgmt.util.StringUtils;
+import com.sms.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

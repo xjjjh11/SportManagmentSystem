@@ -1,29 +1,40 @@
-#项目启动端口号
+# config server port
 server:
   port: 8888
 
 spring:
-  # mysql数据库连接
+  # config database
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/sport_mgmt_sys_db?serverTimezone=GMT%2B8
+    url: jdbc:mysql://rm-bp183u1i04bt0kb2xvo.mysql.rds.aliyuncs.com:3306/sport_mgmt_sys_db?serverTimezone=GMT%2B8
     username: root
-    password: asd123
-    # alibaba druid连接池配置
+    password: aliyun123
+    # config alibaba DataSource
     type: com.alibaba.druid.pool.DruidDataSource
-    # 设置最大最小连接数
     dbcp2:
       initial-size: 1
       max-idle: 20
       min-idle: 1
-    # 设置数据库获取连接等待超时的时间(6分钟)
+    # connect database max wait millions
       max-wait-millis: 60000
-  # Jackson 格式设置
+  # redis config
+  redis:
+    port: 6379
+    host: 127.0.0.1
+    password:
+    lettuce:
+      # redis thread config
+      pool:
+        max-active: 10
+        max-idle: 6
+        max-wait: 1000
+        min-idle: 0
+      shutdown-timeout: 100
+
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-
-# mybatis开启匹配驼峰格式的命名（数据库中"s_a" == sA）
+# reflect database and className
 mybatis:
   configuration:
     mapUnderscoreToCamelCase: true

@@ -23,8 +23,10 @@ class SportMgmtSysApplicationTests {
     @Test
     void contextLoads() throws SQLException {
         log.info("获取数据连接："+dataSource.getConnection());
-        String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        log.info("当前时间："+ date);
+        String year = new SimpleDateFormat("yyyy").format(new Date());
+        String month = new SimpleDateFormat("MM").format(new Date());
+        String day = new SimpleDateFormat("dd").format(new Date());
+        log.info("当前时间："+ year+month+day);
     }
 
     @Test

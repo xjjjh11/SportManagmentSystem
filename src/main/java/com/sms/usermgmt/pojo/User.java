@@ -66,7 +66,7 @@ public class User implements UserDetails {
      *      与下面的isEnabled()方法冲突了，导致映射数据库中的enabled字段失败
      */
     @Getter(value = AccessLevel.NONE)
-    @ApiModelProperty("账号是否可用；0：可用 1：禁用")
+    @ApiModelProperty("账号是否可用；1：可用 0：禁用")
     private Integer enabled;
     /**
      *账号注册时间

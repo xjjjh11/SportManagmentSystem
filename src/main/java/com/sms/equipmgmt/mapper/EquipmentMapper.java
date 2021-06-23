@@ -20,8 +20,19 @@ public interface EquipmentMapper {
      */
     @Insert("INSERT INTO tb_sms_equipment\n" +
             "VALUES\n" +
-            "(#{type},#{number},#{rent_num},#{service_num},#{rates})")
+            "(#{type},#{number},#{rentNum},#{serviceNum},#{rates})")
     Integer insEquipment(Equipment equipment);
+
+    /**
+     * 新增器材
+     *      器材类型已经固定，只要输入该类型器材数量和购入金额
+     * @param equipment
+     * @return
+     */
+    @Insert("UPDATE tb_sms_equipment\n" +
+            "SET number=#{number},buy_rates=#{buyRates}\n" +
+            "WHERE type = #{type}")
+    Integer updEquipment(Equipment equipment);
 
     /**
      * 报修器材
@@ -60,6 +71,27 @@ public interface EquipmentMapper {
     List<Equipment> selAllEquipment();
 
     /**
+     * 查询当前器材数量
+     */
+    @Select("SELECT number FROM tb_sms_equipment\n" +
+            "WHERE type = #{type}")
+    Integer selEquipNumberByType(Integer type);
+
+    /**
+     * 查询当前用户租借器材数
+     */
+    @Select(" SELECT rent_number FROM tb_sms_equip_rent \n" +
+            " WHERE id = #{id} AND equip_type = #{equipType} AND user_number = #{userNumber}")
+    Integer selEquipRentNumByUserNumAndType(Integer id,Integer equipType,String userNumber);
+
+    /**
+     * 查询全部租借器材数
+     */
+    @Select(" SELECT rent_number FROM tb_sms_equip_rent \n" +
+            " WHERE equip_type = #{equipType} ")
+    List<Integer> selEquipRentNumByType(Integer equipType);
+
+    /**
      * 更新器材数量
      *      租借或者归还器材
      * @param type
@@ -82,7 +114,7 @@ public interface EquipmentMapper {
      * 查询全部正在维修的器材类型和数量
      * @return
      */
-    @Select("SELECT type,service_num FROM tb_sms_equipment WHERE service_num > 0")
+    @Select("SELECT type,number,service_num FROM tb_sms_equipment WHERE service_num > 0")
     List<Equipment> selRepairNumbers();
 
     /**
@@ -91,4 +123,6 @@ public interface EquipmentMapper {
      */
     @Select("SELECT rates FROM tb_sms_equipment WHERE type = #{type}")
     Double selRateByType(Integer type);
+
+
 }

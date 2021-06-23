@@ -1,4 +1,4 @@
-package com.sms.usermgmt.util;
+package com.sms.util;
 
 import com.sms.usermgmt.pojo.User;
 import org.springframework.security.core.context.SecurityContextHolder;

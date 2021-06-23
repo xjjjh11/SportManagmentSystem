@@ -18,8 +18,8 @@ public interface EquipmentRentMapper {
      * @param equipmentRent
      * @return
      */
-    @Insert("INSERT INTO tb_sms_equip_rent \n" +
-            "VALUES \n" +
+    @Insert("INSERT INTO tb_sms_equip_rent\n" +
+            "VALUES\n" +
             "(DEFAULT,#{username},#{userNumber},#{duration},#{phone},#{rentNumber},#{rentTime},#{rentRate},#{equipType})")
     Integer insEquipRent(EquipmentRent equipmentRent);
 

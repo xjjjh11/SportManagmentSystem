@@ -1,5 +1,8 @@
 package com.sms.placemgmt.service.impl;
 
+import com.sms.moneymgmt.common.MoneyCommon;
+import com.sms.moneymgmt.mapper.MoneyMapper;
+import com.sms.moneymgmt.pojo.Money;
 import com.sms.placemgmt.common.PlaceStatus;
 import com.sms.placemgmt.mapper.AppointmentMapper;
 import com.sms.placemgmt.mapper.PlaceMapper;
@@ -11,6 +14,8 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,6 +31,12 @@ public class AppointmentServiceImpl implements AppointmentService {
     private AppointmentMapper appointmentMapper;
     @Autowired
     private PlaceMapper placeMapper;
+    @Autowired
+    private MoneyMapper moneyMapper;
+    /**
+     * 场地免费使用时间
+     */
+    private final String freeTimeZone = "16:00~18:00";
 
     /**
      * 场地预约
@@ -39,6 +50,8 @@ public class AppointmentServiceImpl implements AppointmentService {
     public Integer orderPlace(Appointment appointment) {
         String placeName = appointment.getPlaceName();
         Integer placeType = appointment.getPlaceType();
+        Integer week = appointment.getWeek();
+        String timeZone = appointment.getTimeZone();
         Integer appointType = appointment.getAppointType();
 
         if (placeName != null && placeType != null){
@@ -48,59 +61,112 @@ public class AppointmentServiceImpl implements AppointmentService {
                 appointment.setAppointType(appointType);
             }
             // 通过场地名称和类型查询当前场地的状态
-            Integer status = placeMapper.selStatusByPlaceNameAndType(placeName, placeType);
-            if (status !=null){
-                // 场地当前状态
-                switch (status){
-                    // 可预约
-                    case 0:
-                        Integer flag1 = appointmentMapper.insAppoint(appointment);
-                        // 根据 appointType 预约类型，修改场地状态
-                        switch (appointType){
-                            // 普通用户预约场地
-                            case 0:
-                                // 修改场地状态为被预约
-                                Integer flag2 = placeMapper.updStatusByPlaceNameAndType(PlaceStatus.ORDERED, placeName, placeType);
-                                log.info("insAppoint:"+flag1+"   uodStatus:"+flag2);
-                                if (flag1 == 1 && flag2 == 1)
-                                    return PlaceStatus.APPOINT_SUCCESS;
-                                break;
-                            // 校队训练
-                            case 1:
-                                Integer flag3 = placeMapper.updStatusByPlaceNameAndType(PlaceStatus.TRAIN, placeName, placeType);
-                                log.info("insAppoint:"+flag1+"   uodStatus:"+flag3);
-                                if (flag1 == 1 && flag3 == 1)
-                                    return PlaceStatus.APPOINT_SUCCESS;
-                                break;
-                            // 上课预约
-                            case 2:
-                                Integer flag4 = placeMapper.updStatusByPlaceNameAndType(PlaceStatus.CLASSING, placeName, placeType);
-                                log.info("insAppoint:"+flag1+"   uodStatus:"+flag4);
-                                if (flag1 == 1 && flag4 == 1)
-                                    return PlaceStatus.APPOINT_SUCCESS;
-                                break;
-                            // 比赛预约
-                            case 3:
-                                Integer flag5 = placeMapper.updStatusByPlaceNameAndType(PlaceStatus.CONTEST, placeName, placeType);
-                                log.info("insAppoint:"+flag1+"   uodStatus:"+flag5);
-                                if (flag1 == 1 && flag5 == 1)
-                                    return PlaceStatus.APPOINT_SUCCESS;
-                                break;
+            Integer placeStatus = placeMapper.selStatusByPlaceNameAndTypeAndTime(placeName, placeType,week ,timeZone);
+            log.info("placeStatus:"+placeStatus);
+            // 当前场地状态为null，则默认为可预约
+            if (placeStatus == null) placeStatus = 0;
+            int flag=0,flag1=0,flag2=0;
+            // 场地当前状态
+            switch (placeStatus){
+                // 可预约
+                case 0:
+                    flag1 = appointmentMapper.insAppoint(appointment);
+                    log.info("场地名："+placeName+" 场地类型："+placeType);
+                    // 根据 appointType 预约类型，修改场地状态
+                    switch (appointType){
+                        // 普通用户预约场地
+                        case 0:
+                            // 修改场地状态为被预约
+                            flag2 = placeMapper.updStatusByPlaceNameAndType(PlaceStatus.ORDERED, placeName, placeType);
+                            flag = placeMapper.updStatusByPlaceNameAndType2(PlaceStatus.ORDERED, placeName, placeType,week,timeZone);
+                            log.info("普通用户预约：flag1:"+flag1+"   flag2:"+flag2+" flag："+flag);
+                            // 预约成功，新增场地预约花费到运营金额
+                            if (flag1 == 1 && flag2 == 1 && flag == 1){
+                                // 星期一到星期五的16:00~18:00免费使用全部场地，且每次只能预约两小时
+                                if (week <= 5 && week >= 1 && timeZone.equals(freeTimeZone))
+                                    log.info("该时间段场地免费使用，无需收费！");
+                                else {
+                                    Money money = new Money();
+                                    // 在收费的情况下，数据库中的timeId全部默认为0，且每次只能预约两小时
+                                    Integer timeId = 0;
+                                    Double rates = placeMapper.selRatesByPlaceTypeAndTimeId(placeType, timeId);
+                                    Double rentPlaceRate = rates * 2;
+                                    Integer year = Integer.parseInt(new SimpleDateFormat("yyyy").format(new Date()));
+                                    Integer month = Integer.parseInt(new SimpleDateFormat("MM").format(new Date()));
+                                    Integer day = Integer.parseInt(new SimpleDateFormat("dd").format(new Date()));
+                                    money.setMoney(rentPlaceRate);
+                                    money.setYear(year);
+                                    money.setMonth(month);
+                                    money.setDay(day);
+                                    money.setType(MoneyCommon.PLACE_MONEY);
+                                    if (moneyMapper.insEquipMoney(money) == 1) log.info("场地费用新增成功");
+                                    else {
+                                        log.info("场地费用新增失败");
+                                        return -1;
+                                    }
+                                }
+                                return PlaceStatus.APPOINT_SUCCESS;
                             }
-                    case 1:
-                        return PlaceStatus.USING;
-                    case 2:
-                        return PlaceStatus.ORDERED;
-                    case 3:
-                        return PlaceStatus.CLASSING;
-                    case 4:
-                        return PlaceStatus.TRAIN;
-                    case 5:
-                        return PlaceStatus.CONTEST;
-                }
+                            break;
+                        // 校队训练
+                        case 1:
+                            flag2 = placeMapper.updStatusByPlaceNameAndType(PlaceStatus.TRAIN, placeName, placeType);
+                            flag = placeMapper.updStatusByPlaceNameAndType2(PlaceStatus.TRAIN, placeName, placeType,week,timeZone);
+                            log.info("校队训练预约 flag1:"+flag1+"   flag3:"+flag2+"   flag:"+flag);
+                            if (flag1 == 1 && flag2 == 1 && flag == 1)
+                                return PlaceStatus.APPOINT_SUCCESS;
+                            break;
+                        // 上课预约
+                        case 2:
+                            flag2 = placeMapper.updStatusByPlaceNameAndType(PlaceStatus.CLASSING, placeName, placeType);
+                            flag = placeMapper.updStatusByPlaceNameAndType2(PlaceStatus.CLASSING, placeName, placeType,week,timeZone);
+                            log.info("上课预约 flag1:"+flag1+"   flag4:"+flag2+"   flag:"+flag);
+                            if (flag1 == 1 && flag2 == 1 && flag == 1)
+                                return PlaceStatus.APPOINT_SUCCESS;
+                            break;
+                        // 比赛预约
+                        case 3:
+                            flag2 = placeMapper.updStatusByPlaceNameAndType(PlaceStatus.CONTEST, placeName, placeType);
+                            flag = placeMapper.updStatusByPlaceNameAndType2(PlaceStatus.CONTEST, placeName, placeType,week,timeZone);
+                            log.info("比赛预约 flag1:"+flag1+"   flag5:"+flag2+"   flag:"+flag);
+                            if (flag1 == 1 && flag2 == 1 && flag == 1){
+                                // 星期一到星期五的16:00~18:00免费使用全部场地，且每次只能预约两小时
+                                if (week <= 5 && week >= 1 && timeZone.equals(freeTimeZone))
+                                    log.info("该时间段场地免费使用，无需收费！");
+                                else {
+                                    Money money = new Money();
+                                    // 在收费的情况下，数据库中的timeId全部默认为0，且每次只能预约两小时
+                                    Integer timeId = 0;
+                                    Double rates = placeMapper.selRatesByPlaceTypeAndTimeId(placeType, timeId);
+                                    Double rentPlaceRate = rates * 2;
+                                    Integer year = Integer.parseInt(new SimpleDateFormat("yyyy").format(new Date()));
+                                    Integer month = Integer.parseInt(new SimpleDateFormat("MM").format(new Date()));
+                                    Integer day = Integer.parseInt(new SimpleDateFormat("dd").format(new Date()));
+                                    money.setMoney(rentPlaceRate);
+                                    money.setYear(year);
+                                    money.setMonth(month);
+                                    money.setDay(day);
+                                    money.setType(MoneyCommon.PLACE_MONEY);
+                                    if (moneyMapper.insEquipMoney(money) == 1) log.info("场地费用新增成功");
+                                    else {
+                                        log.info("场地费用新增失败");
+                                        return -1;
+                                    }
+                                }
+                                return PlaceStatus.APPOINT_SUCCESS;
+                            }
+                            break;
+                        }
+                    break;
+                case 1:
+                    return PlaceStatus.ORDERED;
+                case 2:
+                    return PlaceStatus.CLASSING;
+                case 3:
+                    return PlaceStatus.TRAIN;
+                case 4:
+                    return PlaceStatus.CONTEST;
             }
-            log.info("place status为空！ ");
-            return PlaceStatus.APPOINT_FAILURE;
         }
         log.info("场地名或场地类型为空！ ");
         return PlaceStatus.APPOINT_FAILURE;
@@ -111,8 +177,8 @@ public class AppointmentServiceImpl implements AppointmentService {
      * @return
      */
     @Override
-    public List<Appointment> findAllAppoints() {
-        return appointmentMapper.selAllAppoints();
+    public List<Appointment> findMyAppoints(String userNumber) {
+        return appointmentMapper.selAppointsByUserNumber(userNumber);
     }
 
     /**
@@ -122,8 +188,9 @@ public class AppointmentServiceImpl implements AppointmentService {
      */
     public Integer cancelAppoint(Integer appointId,Integer placeType,String placeName){
 
-        Integer flag = placeMapper.updStatusByPlaceNameAndType(PlaceStatus.FREE, placeName, placeType);
-        if (flag == 1){
+        Integer flag1 = placeMapper.updStatusByPlaceNameAndType(PlaceStatus.FREE, placeName, placeType);
+        Integer flag2 = placeMapper.updStatusByAppointId(appointId,PlaceStatus.FREE);
+        if (flag1 == 1 && flag2 == 1){
             log.info("场地状态变为可使用！");
             return appointmentMapper.delAppointByPlaceAndTime(appointId);
         }else {

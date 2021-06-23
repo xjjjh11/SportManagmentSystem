@@ -1,4 +1,4 @@
-package com.sms.usermgmt.util;
+package com.sms.util;
 
 /**
  * TOKEN常量

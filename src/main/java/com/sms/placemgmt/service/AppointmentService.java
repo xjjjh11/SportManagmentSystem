@@ -21,7 +21,7 @@ public interface AppointmentService {
      * 查询全部预约信息
      * @return
      */
-    List<Appointment> findAllAppoints();
+    List<Appointment> findMyAppoints(String userNumber);
 
     /**
      * 取消预约后，并把该时间段的场地状态改为可使用

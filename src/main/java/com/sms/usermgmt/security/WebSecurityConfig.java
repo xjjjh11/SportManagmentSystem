@@ -10,12 +10,19 @@ import org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.time.Duration;
+import java.util.Arrays;
 
 /**
  * @author Jared
@@ -106,7 +113,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.js"
                 )
                 .permitAll()
-                .antMatchers(HttpMethod.POST,"/login","/user/register").permitAll()
+                .antMatchers(HttpMethod.POST,"/user/regTeacher","/user/register","/user/userLogin").permitAll()
                 .antMatchers("*/user/**").hasRole("user")
                 .antMatchers("*/admin/**").hasRole("admin")
                 .antMatchers("*/superAdmin/**").hasRole("superAdmin")
@@ -121,7 +128,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 把默认的登录名username改成自定义的userNumber
                 .usernameParameter("userNumber")
                 .loginProcessingUrl("/user/userLogin")
-                .loginPage("/login")
                 // 配置登录成功自定义处理类
                 .successHandler(userLoginSuccessHandler)
                 // 配置登录失败自定义处理类
@@ -138,6 +144,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 // 开启跨域
                 .cors()
+                .configurationSource(corsConfigurationSource())
                 .and()
                 // 由于使用的是JWT，我们这里不需要csrf(跨站请求伪造防护)
                 .csrf().disable();
@@ -147,5 +154,32 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().cacheControl();
         // 添加JWT过滤器
         http.addFilter(new JWTAuthenticationTokenFilter(authenticationManager()));
+    }
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource(){
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowCredentials(true);
+        configuration.setAllowedOrigins(Arrays.asList("*"));
+        configuration.setAllowedMethods(Arrays.asList("*"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
+        configuration.setMaxAge(Duration.ofHours(1));
+        source.registerCorsConfiguration("/**",configuration);
+        return source;
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        super.configure(web);
+        web.ignoring().antMatchers("/swagger-ui.html",
+                "/v2/api-docs", // swagger api json
+                "/swagger-resources/configuration/ui", // 用来获取支持的动作
+                "/swagger-resources", // 用来获取api-docs的URI
+                "/swagger-resources/configuration/security", // 安全选项
+                "/swagger-resources/**",
+                "swagger-v2/docs.html",
+                "swagger/index.html "
+        );
     }
 }

@@ -26,14 +26,14 @@ public class AdminServiceImpl implements AdminService {
     /**
      * 全部用户信息
      */
-    List<User> users = new ArrayList<>();
+
 
     /**
      * 查询全部用户信息和对应的角色信息
      * @return
      */
     public List<User> showAllUserInfo(){
-        users = adminMapper.selAllUserInfo();
+        List<User> users = adminMapper.selAllUserInfo();
         if (users != null){
             for (User user : users){
                 // 角色集合
@@ -57,7 +57,7 @@ public class AdminServiceImpl implements AdminService {
         // 1、查询全部用户信息
         // 2、筛选出管理员和超级管理员
         // 3、其余user存入集合中
-        users = adminMapper.selAllUserInfo();
+        List<User> users = adminMapper.selAllUserInfo();
         if (users != null) {
             Iterator<User> iterUsers = users.iterator();
             while (iterUsers.hasNext()){
@@ -90,13 +90,14 @@ public class AdminServiceImpl implements AdminService {
         // 1、查询全部用户信息
         // 2、筛选出普通用户
         // 3、其余user存入集合中
-        users = adminMapper.selAllUserInfo();
+        List<User> users = adminMapper.selAllUserInfo();
         if (users != null) {
             Iterator<User> iterUsers = users.iterator();
             while (iterUsers.hasNext()){
                 User user = iterUsers.next();
                 ArrayList<GrantedAuthority> authorities = new ArrayList<>();
                 List<String> roleCodes = adminMapper.findRoleByUserNum(user.getUserNumber());
+                System.out.println("roleCodes:"+roleCodes);
                 Iterator<String> iterRoles = roleCodes.iterator();
                 while(iterRoles.hasNext()){
                     String role = iterRoles.next();

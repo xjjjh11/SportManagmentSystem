@@ -26,12 +26,12 @@ public class Equipment {
     /**
      * 器材被租借数量
      */
-    @ApiModelProperty("器材被租借数量")
+    @ApiModelProperty("器材被租借数量，开始默认0")
     private Integer rentNum;
     /**
      * 器材被维修数量
      */
-    @ApiModelProperty("器材被维修数量")
+    @ApiModelProperty("器材被维修数量，开始默认0")
     private Integer serviceNum;
     /**
      * 器材收费标准
@@ -39,4 +39,9 @@ public class Equipment {
      */
     @ApiModelProperty("器材收费标准")
     private Double rates;
+    /**
+     * 器材的购入价格
+     */
+    @ApiModelProperty("器材的购入价格")
+    private Double buyRates;
 }

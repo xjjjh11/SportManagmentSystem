@@ -15,16 +15,16 @@ public interface EquipmentRentService {
      * @param equipmentRent
      * @return
      */
-    Integer rentEquipment(EquipmentRent equipmentRent,Integer number);
+    Integer rentEquipment(EquipmentRent equipmentRent);
 
     /**
      * 器材回收
      * @param id
      * @param eType
-     * @param rentNum
+     * @param userNumber
      * @return
      */
-    Integer delEquipmentRent(Integer id,Integer eType,Integer rentNum,Integer number);
+    Integer delEquipmentRent(Integer id,Integer eType,String userNumber);
 
     /**
      * 查询当前用户的全部租借信息

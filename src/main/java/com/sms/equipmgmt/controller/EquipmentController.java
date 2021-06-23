@@ -2,16 +2,15 @@ package com.sms.equipmgmt.controller;
 
 import com.sms.equipmgmt.pojo.Equipment;
 import com.sms.equipmgmt.service.EquipmentService;
-import com.sms.usermgmt.util.ResultUtil;
+import com.sms.util.ResultUtil;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -34,14 +33,18 @@ public class EquipmentController {
 
     @PreAuthorize("hasRole('admin')")
     @PostMapping("/admin/add")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "type",value = "器材类型",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "number",value = "新增器材数",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "buyRates",value = "器材购入价格",dataType = "Double",dataTypeClass = Double.class)
+    })
     @ApiOperation(value = "新增器材",notes = "需要管理员或超级管理员权限才可新增器材")
-    public Map<String,Object> add(@RequestParam("器材类型")Integer type,@RequestParam("器材数量") Integer number,
-                                  @RequestParam("器材收费标准") Double rates){
-        // 组装数据
+    public Map<String,Object> add(@RequestParam("type") Integer type,@RequestParam("number") Integer number,
+                                  @RequestParam("buyRates") Double buyRates){
         Equipment equipment = new Equipment();
         equipment.setType(type);
         equipment.setNumber(number);
-        equipment.setRates(rates);
+        equipment.setBuyRates(buyRates);
         Integer flag = equipmentService.addEquipment(equipment);
         if (flag != null && flag == 1){
             map.put("title","新增器材成功！");
@@ -54,9 +57,14 @@ public class EquipmentController {
 
     @PreAuthorize("hasRole('admin')")
     @PostMapping("/admin/repair")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "type",value = "器材类型",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "serviceNum",value = "报修数量",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "number",value = "原本器材数量",dataType = "Integer",dataTypeClass = Integer.class)
+    })
     @ApiOperation(value = "报修器材",notes = "需要管理员或超级管理员权限才可报修器材")
-    public Map<String,Object> add(@RequestParam("器材类型")Integer type,@RequestParam("报修数量") Integer serviceNum,
-                                  @RequestParam("原本器材数量") Integer number){
+    public Map<String,Object> repair(@RequestParam("type") Integer type,@RequestParam("serviceNum") Integer serviceNum,
+                                     @RequestParam("number") Integer number){
         Map<String,Object> map = new HashMap<>();
         Equipment equipment = equipmentService.repairEquipmentByType(type, serviceNum, number);
         if (equipment != null){
@@ -70,8 +78,12 @@ public class EquipmentController {
 
     @PreAuthorize("hasRole('admin')")
     @PostMapping("/admin/update")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "type",value = "器材类型",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "number",value = "更改后的器材数量",dataType = "Integer",dataTypeClass = Integer.class)
+    })
     @ApiOperation(value = "增加或减少可用器材数量",notes = "需要管理员或超级管理员权限才可操作器材数量")
-    public Map<String,Object> add(@RequestParam("器材类型")Integer type, @RequestParam("更改后的器材数量") Integer number){
+    public Map<String,Object> update(@RequestParam("type") Integer type,@RequestParam("number") Integer number){
         if (equipmentService.modifyEquipmentNumByType(type,number) == 1){
             map.put("title","成功更新器材数量！");
             return ResultUtil.resultSuccess(map);
@@ -108,8 +120,9 @@ public class EquipmentController {
     }
 
     @PostMapping("/findRates")
+    @ApiImplicitParam(name = "type",value = "器材类型",dataType = "Integer",dataTypeClass = Integer.class)
     @ApiOperation(value = "查询某类型器材的收费标准",notes = "普通用户也可进行操作")
-    public Map<String,Object> findRates(@RequestParam("器材类型") Integer type){
+    public Map<String,Object> findRates(@RequestParam("type") Integer type){
         Map<String,Object> map = new HashMap<>();
         Double rates = equipmentService.findRatesByType(type);
         if (rates != null){

@@ -2,7 +2,7 @@ package com.sms.usermgmt.security.filter;
 
 
 import com.sms.usermgmt.pojo.User;
-import com.sms.usermgmt.util.JWTCommon;
+import com.sms.util.JWTCommon;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;

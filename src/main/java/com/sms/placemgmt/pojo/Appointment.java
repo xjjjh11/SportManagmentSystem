@@ -47,6 +47,11 @@ public class Appointment {
     @ApiModelProperty("场地名称")
     private String placeName;
     /**
+     * 场地状态，默认为可预约
+     */
+    @ApiModelProperty("场地状态")
+    private Integer placeStatus = 0;
+    /**
      * 预约星期几
      */
     @ApiModelProperty("预约星期几")

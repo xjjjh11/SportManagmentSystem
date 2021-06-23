@@ -55,6 +55,15 @@ public interface MyUserDetailsMapper {
     User selUserByUserNumber(String userNumber);
 
     /**
+     * 根据userNumber查询用户密码
+     * @param userNumber 一卡通号或教职工号
+     * @return
+     */
+    @Select("SELECT password FROM tb_sms_user\n" +
+            "WHERE user_number = #{userNumber}")
+    String selPwdByUserNumber(String userNumber);
+
+    /**
      * 修改密码
      * @param userNumber 一卡通号
      * @param newPwd 新密码
@@ -76,10 +85,10 @@ public interface MyUserDetailsMapper {
      * @return
      */
     @Update("UPDATE tb_sms_user " +
-            "SET gender= #{gender},academy= #{academy},major= #{major}," +
+            "SET username = #{username},gender= #{gender},academy= #{academy},major= #{major}," +
                             "classes= #{classes},phone= #{phone}\n" +
             "WHERE user_number = #{userNumber}")
-    Integer updUserInfoByUserNumber(String userNumber, Integer gender, String academy,
+    Integer updUserInfoByUserNumber(String userNumber,String username,Integer gender, String academy,
                                     String major, String classes, String phone);
 
 }

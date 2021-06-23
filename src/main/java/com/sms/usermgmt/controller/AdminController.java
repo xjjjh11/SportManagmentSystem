@@ -2,14 +2,12 @@ package com.sms.usermgmt.controller;
 
 import com.sms.usermgmt.pojo.User;
 import com.sms.usermgmt.service.AdminService;
-import com.sms.usermgmt.util.ResultUtil;
-import com.sms.usermgmt.util.SecurityUtil;
+import com.sms.util.ResultUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;

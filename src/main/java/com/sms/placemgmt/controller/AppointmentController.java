@@ -3,8 +3,10 @@ package com.sms.placemgmt.controller;
 import com.sms.placemgmt.common.PlaceStatus;
 import com.sms.placemgmt.pojo.Appointment;
 import com.sms.placemgmt.service.AppointmentService;
-import com.sms.usermgmt.util.ResultUtil;
+import com.sms.util.ResultUtil;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -21,7 +23,7 @@ import java.util.Map;
  * @author Jared
  * @date 2021/6/8 7:57
  */
-@Api(tags = "预约操作接口")
+@Api(tags = "场地预约操作接口")
 @RestController
 @RequestMapping("/appoint")
 public class AppointmentController {
@@ -32,11 +34,21 @@ public class AppointmentController {
     Map<String,Object> map = new HashMap<>();
 
     @ApiOperation(value = "个人用户场地预约",notes = "场地预约，全部信息都需填写！")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "userNumber",value = "一卡通号",dataType = "String",dataTypeClass = String.class),
+            @ApiImplicitParam(name = "username",value = "用户名",dataType = "String",dataTypeClass = String.class),
+            @ApiImplicitParam(name = "phone",value = "手机号",dataType = "String",dataTypeClass = String.class),
+            @ApiImplicitParam(name = "appointType",value = "预约类型",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "placeType",value = "场地类型",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "placeName",value = "场地名称",dataType = "String",dataTypeClass = String.class),
+            @ApiImplicitParam(name = "week",value = "预约周几",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "timeZone",value = "预约哪段时间",dataType = "String",dataTypeClass = String.class)
+    })
     @PostMapping("/appoint")
-    public Map<String,Object> appoint(@RequestParam("一卡通号") String userNumber, @RequestParam("用户名")String username,
-                                           @RequestParam("手机号")String phone, @RequestParam("预约类型")Integer appointType,
-                                           @RequestParam("场地类型")Integer placeType, @RequestParam("场地名称")String placeName,
-                                           @RequestParam("预约周几")Integer week, @RequestParam("预约哪段时间")String timeZone){
+    public Map<String,Object> appoint(@RequestParam("userNumber")String userNumber,@RequestParam("username")String username,
+                                      @RequestParam("phone") String phone,@RequestParam("appointType") Integer appointType,
+                                      @RequestParam("placeType")Integer placeType,@RequestParam("placeName")String placeName,
+                                      @RequestParam("week") Integer week,@RequestParam("timeZone") String timeZone){
         // 组装数据
         Appointment appointment = new Appointment();
         appointment.setUserNumber(userNumber);
@@ -52,9 +64,6 @@ public class AppointmentController {
        if (status.equals(PlaceStatus.APPOINT_SUCCESS)){
            map.put("title","预约成功！");
            return ResultUtil.resultSuccess(map);
-       }else if (status.equals(PlaceStatus.USING)){
-           map.put("title","场地正在使用中！");
-           return ResultUtil.resultError(map);
        }else if (status.equals(PlaceStatus.ORDERED)){
            map.put("title","场地已被预约！");
            return ResultUtil.resultError(map);
@@ -74,16 +83,26 @@ public class AppointmentController {
     }
 
     @PreAuthorize("hasRole('admin')")
-    @ApiOperation(value = "上课或校队场地预约",notes = "需要管理员或超级管理员权限，全部信息都需填写！")
     @PostMapping("/admin/appoint")
-    public Map<String,Object> appointByAdmin(@RequestParam("一卡通号") String userNumber, @RequestParam("用户名")String username,
-                                           @RequestParam("手机号")String phone, @RequestParam("预约类型")Integer appointType,
-                                           @RequestParam("场地类型")Integer placeType, @RequestParam("场地名称")String placeName,
-                                           @RequestParam("预约周几")Integer week, @RequestParam("预约哪段时间")String timeZone){
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "adminNumber",value = "管理员账号",dataType = "String",dataTypeClass = String.class),
+            @ApiImplicitParam(name = "adminName",value = "管理员名",dataType = "String",dataTypeClass = String.class),
+            @ApiImplicitParam(name = "phone",value = "手机号",dataType = "String",dataTypeClass = String.class),
+            @ApiImplicitParam(name = "appointType",value = "预约类型",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "placeType",value = "场地类型",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "placeName",value = "场地名称",dataType = "String",dataTypeClass = String.class),
+            @ApiImplicitParam(name = "week",value = "预约周几",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "timeZone",value = "预约哪段时间",dataType = "String",dataTypeClass = String.class)
+    })
+    @ApiOperation(value = "上课或校队场地预约",notes = "需要管理员或超级管理员权限，全部信息都需填写！")
+    public Map<String,Object> appointByAdmin(@RequestParam("adminNumber") String adminNumber,@RequestParam("adminName") String adminName,
+                                             @RequestParam("phone") String phone,@RequestParam("appointType") Integer appointType,
+                                             @RequestParam("placeType")Integer placeType,@RequestParam("placeName")String placeName,
+                                             @RequestParam("week") Integer week,@RequestParam("timeZone") String timeZone){
         // 组装数据
         Appointment appointment = new Appointment();
-        appointment.setUserNumber(userNumber);
-        appointment.setUsername(username);
+        appointment.setUserNumber(adminNumber);
+        appointment.setUsername(adminName);
         appointment.setPhone(phone);
         appointment.setAppointType(appointType);
         appointment.setPlaceType(placeType);
@@ -95,9 +114,6 @@ public class AppointmentController {
         if (status.equals(PlaceStatus.APPOINT_SUCCESS)){
             map.put("title","预约成功！");
             return ResultUtil.resultSuccess(map);
-        }else if (status.equals(PlaceStatus.USING)){
-            map.put("title","场地正在使用中！");
-            return ResultUtil.resultError(map);
         }else if (status.equals(PlaceStatus.ORDERED)){
             map.put("title","场地已被预约！");
             return ResultUtil.resultError(map);
@@ -116,12 +132,13 @@ public class AppointmentController {
         }
     }
 
-    @ApiOperation(value = "查询全部预约信息",notes = "查询全部预约信息")
-    @PostMapping("/showAll")
-    public Map<String,Object> cancelAppoint(){
-        List<Appointment> appointments = appointmentService.findAllAppoints();
+    @PostMapping("/showInfo")
+    @ApiImplicitParam(name = "userNumber",value = "一卡通号",dataType = "String",dataTypeClass = String.class)
+    @ApiOperation(value = "查询我的预约",notes = "根据一卡通号查询自己的场地预约情况")
+    public Map<String,Object> showInfo(@RequestParam("userNumber")String userNumber){
+        List<Appointment> appointments = appointmentService.findMyAppoints(userNumber);
         Map<String,Object> map = new HashMap<>();
-        if (appointments != null){
+        if (appointments.size() != 0){
             map.put("title","查询成功！");
             map.put("datas",appointments);
             return ResultUtil.resultSuccess(map);
@@ -131,9 +148,15 @@ public class AppointmentController {
         }
     }
 
-    @ApiOperation(value = "取消预约",notes = "取消预约后，并修改该场地的状态")
     @PostMapping("/cancelAppoint")
-    public Map<String,Object> cancelAppoint(Integer appointId,Integer placeType,String placeName){
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "appointId",value = "场地预约id",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "placeType",value = "场地类型",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "placeName",value = "场地名称",dataType = "String",dataTypeClass = String.class)
+    })
+    @ApiOperation(value = "取消预约",notes = "取消预约后，并修改该场地的状态")
+    public Map<String,Object> cancelAppoint(@RequestParam("appointId")Integer appointId,@RequestParam("placeType")Integer placeType,
+                                            @RequestParam("placeName")String placeName){
         Integer flag = appointmentService.cancelAppoint(appointId,placeType,placeName);
         if (flag == 1) {
             map.put("title", "已取消预约！");
@@ -145,9 +168,15 @@ public class AppointmentController {
         }
     }
 
-    @ApiOperation(value = "修改预约信息",notes = "修改预约信息，只能修改用户名或手机号")
     @PostMapping("/modifyAppoint")
-    public Map<String,Object> modifyAppoint(String username,String phone,Integer appointId){
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "appointId",value = "场地预约id",dataType = "Integer",dataTypeClass = Integer.class),
+            @ApiImplicitParam(name = "username",value = "用户名",dataType = "String",dataTypeClass = String.class),
+            @ApiImplicitParam(name = "phone",value = "手机号",dataType = "String",dataTypeClass = String.class)
+    })
+    @ApiOperation(value = "修改预约信息",notes = "修改预约信息，只能修改用户名或手机号")
+    public Map<String,Object> modifyAppoint(@RequestParam("username")String username,@RequestParam("phone")String phone,
+                                            @RequestParam("appointId")Integer appointId){
         Integer flag = appointmentService.modifyAppoint(username, phone, appointId);
         if (flag == -1){
             map.put("title","用户名或密码为空!");

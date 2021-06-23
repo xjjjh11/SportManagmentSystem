@@ -5,8 +5,8 @@ import com.sms.usermgmt.mapper.AdminMapper;
 import com.sms.usermgmt.mapper.MyUserDetailsMapper;
 import com.sms.usermgmt.pojo.User;
 import com.sms.usermgmt.service.UserService;
-import com.sms.usermgmt.util.ResultUtil;
-import com.sms.usermgmt.util.StringUtils;
+import com.sms.util.ResultUtil;
+import com.sms.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -119,11 +119,16 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public Integer updUserInfoByUserNumber(String userNumber, Integer gender, String academy, String major, String classes, String phone) {
+    public Integer updUserInfoByUserNumber(String userNumber,String username,Integer gender, String academy, String major, String classes, String phone) {
         if (userNumber == null)
             return ResultUtil.USER_NUMBER_ERROR;
         else if (!StringUtils.checkPhoneNumber(phone))
             return ResultUtil.PHONE_NUMBER_ERROR;
-        return myUserDetailsMapper.updUserInfoByUserNumber(userNumber,gender,academy,major,classes,phone);
+        return myUserDetailsMapper.updUserInfoByUserNumber(userNumber,username,gender,academy,major,classes,phone);
+    }
+
+    @Override
+    public String findPwdByUserNumber(String userNumber) {
+        return myUserDetailsMapper.selPwdByUserNumber(userNumber);
     }
 }

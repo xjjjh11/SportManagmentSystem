@@ -1,6 +1,6 @@
 package com.sms.usermgmt.security.handler;
 
-import com.sms.usermgmt.util.ResultUtil;
+import com.sms.util.ResultUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.LockedException;

@@ -17,9 +17,8 @@ public interface AppointmentMapper {
      * @return
      */
     @Insert("INSERT INTO tb_sms_appointment\n" +
-            "(id,user_number,username,phone,appoint_type,place_type,place_name,week,time_zone)" +
-            "VALUE\n" +
-            "(default,#{userNumber},#{username},#{phone},#{appointType},#{placeType},#{placeName},#{week},#{timeZone})")
+            "VALUES\n" +
+            "(default,#{userNumber},#{username},#{phone},#{appointType},#{placeType},#{placeName},#{placeStatus},#{week},#{timeZone})")
     Integer insAppoint(Appointment appointment);
 
     /**
@@ -39,12 +38,23 @@ public interface AppointmentMapper {
      * @param placeType
      * @return
      */
-    @Select("SELECT `week`,time_zone FROM tb_sms_appointment\n" +
+    @Select("SELECT place_status,week,time_zone FROM tb_sms_appointment\n" +
             "WHERE place_name = #{placeName} AND place_type = #{placeType}")
     List<Appointment> selAppointTimeByPlaceNameAndType(String placeName,Integer placeType);
 
+    @Select("SELECT place_status,time_zone FROM tb_sms_appointment\n" +
+            "WHERE place_name = #{placeName} AND place_type = #{placeType} AND week = #{week}")
+    List<Appointment> selAppointWeekByPlaceNameAndType(String placeName,Integer placeType,Integer week);
     /**
-     * 查询全部场地信息
+     * 查询我预约的场地信息
+     * @return
+     */
+    @Select("SELECT * FROM tb_sms_appointment\n" +
+            "WHERE user_number = #{userNumber}")
+    List<Appointment> selAppointsByUserNumber(String userNumber);
+
+    /**
+     * 查询全部预约信息
      * @return
      */
     @Select("SELECT * FROM tb_sms_appointment")

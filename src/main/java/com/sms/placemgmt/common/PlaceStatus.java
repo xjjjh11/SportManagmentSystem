@@ -10,25 +10,21 @@ public class PlaceStatus {
      */
     public final static Integer FREE = 0;
     /**
-     * 使用中
-     */
-    public final static Integer USING = 1;
-    /**
      * 被预约
      */
-    public final static Integer ORDERED = 2;
+    public final static Integer ORDERED = 1;
     /**
      * 上课
      */
-    public final static Integer CLASSING = 3;
+    public final static Integer CLASSING = 2;
     /**
      * 校队训练
      */
-    public final static Integer TRAIN = 4;
+    public final static Integer TRAIN = 3;
     /**
      * 比赛
      */
-    public final static Integer CONTEST = 5;
+    public final static Integer CONTEST = 4;
 
     /**
      * 预约成功

@@ -1,6 +1,6 @@
 package com.sms.usermgmt.security.handler;
 
-import com.sms.usermgmt.util.ResultUtil;
+import com.sms.util.ResultUtil;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;

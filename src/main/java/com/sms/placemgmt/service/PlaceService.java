@@ -41,7 +41,7 @@ public interface PlaceService {
     List<Place> findPlaceByTypeAndTime(Integer placeType,Integer week,String timeZone);
 
     /**
-     * 查询某个场地的这一周内的空闲时间
+     * 查询某个场地的某一天的空闲时间
      * @param placeName
      * @param placeType
      * @return
@@ -54,7 +54,7 @@ public interface PlaceService {
      * @param placeType
      * @return
      */
-    Map<String,Object> findAllTime(String placeName,Integer placeType);
+    Map<String,Object> findAllTime(String placeName,Integer placeType,Integer week);
 
     /**
      * 据所选场地类型和时间，查询对应的收费标准
@@ -63,7 +63,7 @@ public interface PlaceService {
      * @param timeZone
      * @return
      */
-    Integer findRateByPlaceTypeAndTime(Integer placeType,Integer week,String timeZone);
+    Double findRateByPlaceTypeAndTime(Integer placeType,Integer week,String timeZone);
 
     /**
      * 在场地空闲时，删除场地
